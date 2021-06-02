@@ -1,0 +1,50 @@
+#딕셔너리 = {Key1:Value1, Key2:Value2}
+score = {"name":"Tom", "math":80, "english":70}
+score["name"] # tom
+
+score["name"] = "michale"
+score["name"] # michale
+
+type(score) # dic
+
+score = dict() #비어있는 딕셔너리
+score = {} #비어있는 딕셔너리
+
+#키가 있는지 확인
+score = {"name":"Tom", "math":80, "english":70}
+"math" in score # True
+"age" in score # False
+
+#키의 개수
+len(score) # 3
+
+#키-값 쌍 추가하기
+score.setdefault("age",20) # {"name":"Tom", "math":80, "english":70, "age":20}
+
+#키-값 수정하기
+score.update({"math":90}) # {"name":"Tom", "math":90, "english":70, "age":70}
+
+#키로 딕셔너리 항목삭제
+score = {"name":"Tom", "math":80, "english":70}
+score.pop("name") #삭제된 키의 값 반환 => tom
+
+score # => "math":80, "english":70
+score.pop("age",0) # => age라는 키가 없으면 0를 출력
+
+#모든 값 삭제
+score.clear() # => score = {}
+
+#모든 키, 값 가져오기
+score = {"name":"Tom", "math":80, "english":70}
+score.keys() # dict_keys(["name", "math","english"])
+score.values() # dict_values(["Tom",80,70])
+score.items() # dict_items([("name","Tom"),("math",80),("english",70)])
+
+#딕셔너리 복사
+a = {"a":0, "b":1}
+b = a.copy() #리스트와 같음
+
+#중첩 딕셔너리의 경우
+import copy
+a = {"a": {"c":0,"d":0}, "b":{"e":0,"f":0}}
+b = copy.deepcopy(a)
