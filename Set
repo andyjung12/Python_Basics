@@ -1,0 +1,58 @@
+#세트에 특정값 확인
+animal = {"dog","cat", "monkey", "horse"}
+"cat" in animal # True
+
+#Set로 Set만들기
+a = set("animal") # a = {"a","n","i","m","a","l"}
+b = set(range(5)) # b = {0,1,2,3,4}
+
+# 합집합
+a = {1,2,3}
+b = {3,4,5}
+a | b # => {1,2,3,4,5}
+set.union(a,b) = {1,2,3,4,5}
+
+#교집합
+a = {1,2,3}
+b = {3,4,5}
+a & b # => {3}
+set.intersection(a,b) # => {3}
+
+#차집합
+a = {1,2,3}
+b = {3,4,5}
+a - b # => {1,2}
+set.difference(a,b) # => {1,2}
+
+#대칭차집합
+a = {1,2,3}
+b = {3,4,5}
+a^b # => {1,2,4,5}
+set.symmetric_difference(a,b) # => {1,2,4,5}
+
+#부분집합
+a = {1,2,3,4}
+a<= {1,2,3,4,5} # True
+a <= {1,2,3} # False
+a.issubset({1,2,3}) # False
+
+#상위집합
+a = {1,2,3,4}
+a >= {1,2,3} # True
+a.issuperset({1,2,3}) # True
+a >= {1,2,3,4,5} # False
+aissuperset({1,2,3,4,5}) # False
+
+#겹치는 요소 확인
+a = {1,2,3,4}
+a.isdisjoint({5,6,7,8}) # 겹치는 요소 없음 => True
+a.isdisjoint({2,3,4,5}) # 2,3,4 겹침 => False
+
+#Set에 추가하기
+a = {1,2,3,4}
+a.add(5) # => {1,2,3,4,5}
+
+#Set에서 요소 삭제
+a = {1,2,3,4}
+a.remove(1) # => {2,3,4}
+a.discard(2) # => {3,4}
