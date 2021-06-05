@@ -1,0 +1,59 @@
+# if 문 조건 생략
+x = 10
+if x == 10:
+    pass
+
+# if 문 들여쓰기
+x = 10
+if x == 10: #만약에 10이면 아래 명령어를 실행
+    print("x가 10입니다")
+    print("x가 12가 아닙니다")
+
+# 다양한 조건들
+if x > 3:
+    print("x가 3보다 크다")
+if x > 2 and x < 10: #만약에 x가 2보다 크고 10보다 작으면 아래 명령어 실행
+    print("x가 2보다 크고 10보다 작다")
+if 0 < x < 20: #만약에 x가 0보다 크고 20보다 작으면 아래 명령어 실행
+    print("x는 0보다 크고 20보다 작다") 
+
+# 중첩 if문
+if x >= 10: # x가 10보다 크거나 같으면 아래 실행
+    if x < 20: #위에 조건에 성립하고 x가 20보다 작으면 아래 실행
+        print("10이상 20이하")
+    elif x <= 30: #else + if
+    #첫번째 조건이 성립되지만 첫번째 sub조건이 성립이 되지 않고 
+    #x가 30보다 작거나 같을때 아래 명령어 실행
+        print("20초과 30이하")
+#Example 1
+x = int(input("첫번째 점수를 입력해주세요:"))
+y = int(input("두번째 점수를 입력해주세요:"))
+z = int(input("세번째 점수를 입력해주세요:"))
+
+if not 0 <= x <= 100 and 0 <= y <= 100 and 0<= z <= 100:
+    print("잘못된 점수가 입력되었습니다")
+elif x > 65 and y > 65 and z > 65:
+    print("합격")
+else:
+    print("불합격")
+    
+#Example 2
+fruit = ["사과", "오렌지"]
+vegetable = ['당근', '호박']
+category_input = input("등록할 카테고리를 선택해주세요 (과일, 채소):")
+item_input = input("등록할 채소를 입력해주세요:")
+
+if category_input == "과일":
+    if item_input in fruit:
+        print("이미 등록된 과일입니다")
+    else:
+        fruit.append(item_input)
+        print(fruit)
+elif category_input == "채소":
+    if item_input in vegetable:
+        print("이미 등록된 채소입니다")
+    else:
+        vegetable.append(item_input)
+        print(vegetable)
+else:
+    print("존재하지 않는 카테고리입니다")
