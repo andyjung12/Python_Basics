@@ -1,0 +1,49 @@
+#While문 기본 형식
+i = 0 #초기값
+while i < 10:
+    print("현재값:", i)
+    i+=1
+    
+#입력한 횟수만큼 반복하기
+count = int(input("반복횟수?"))
+i = 0
+while i < count:
+    print("입력한 횟수만큼 반복")
+    i+=1
+
+#입력조건이 맞을때까지 반복하기
+i = 0
+while i!=5:
+    i = int(input("5를 입력하면 반복이 중단됩니다."))
+print("중단!")
+
+#Example 1
+sum = 0
+i = 1
+while i !=0:
+    i = int(input("값을 입력해주세요 : "))
+    sum= sum+i
+print("합계는?",sum)
+
+#Example 2 (가위바위보 만들기)
+import random
+user = 1
+comp = 0
+
+win = 0
+total = 0
+
+game_table = {1:"가위", 2:"바위", 3:"보"}
+
+while user in [1,2,3]:
+    user = int(input("가위(1), 바위(2), 보(3)을 입력해주세요: "))
+    comp = random.randint(1,3)
+    
+    if (user == 1 and comp == 3) or (user == 2 and comp == 1) or (user == 3 and comp == 2):
+        win = win + 1
+    
+    if user in [1,2,3]:
+        total = total + 1
+        print(f'유저 : {game_table[user]}, 컴퓨터 : {game_table[comp]}')
+
+print(f"게임종료 (전체: {total}, 승리: {win})")
