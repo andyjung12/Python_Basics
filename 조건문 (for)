@@ -1,0 +1,47 @@
+#기본 for문 형식
+for i in _____:
+
+#for문과 range()
+for i in range(0,10):
+    print(i)
+    
+for i in range(10,0,-1):
+    print(i)
+    
+#for문과 다양한 자료형들
+#Example 1
+a = [1,2,3,4,5,6,7]
+for i in a:
+    print(i)
+
+#Example 2
+for i in "Orange":
+    print(i, end="") #end="" 하면 출력할때마다 빈 공간 없이 출력
+
+#Example 3
+a = {"name": "tom", "math":80, "english":70}
+for i in a:
+    print(i, end="") #빈 공간 없이 key값 출력
+    print(a[i]) #value 값 출력
+
+#입력한 횟수만큼 반복하기
+count = int(input("반복할횟수?"))
+for i in range(count): #count에 input한 숫자만큼 아래 문구 출력
+    print('hello, world!', i)
+
+#enumerate 사용하여 index접근
+a = [1,2,3,4,5,6,7]
+for idx, val in enumerate(a): #첫번째 값 idx 는 인덱스, 두번째 값 val은 값
+    print(idx, val, sep=",") #인덱스와 값을 , 로 나눠서 출력
+
+#for문 중첩
+#Example 1
+for i in range(0,5):
+    print("******************", i)
+    for j in range(0,5):
+        print("j:",j)
+
+#Example 2 (구구단)
+for i in range(1,10):
+    for x in range(1,10):
+        print("{}*{}={}".format(i, x, i*x))
